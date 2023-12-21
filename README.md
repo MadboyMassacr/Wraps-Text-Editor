@@ -1,2 +1,2 @@
-# Google Wrap
+#Wrap
  A web based text utility app
