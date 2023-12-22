@@ -10,22 +10,18 @@ export default function TextArea(props) {
     const [text, setText] = useState('');
 
     const handleUpper = () => {
-        console.log("Upper case was clicked");
         setText(text.toUpperCase())
     }
 
     const handleChange = (event) => {
-        console.log("On change");
         setText(event.target.value)
     }
 
     const handleLower = () => {
-        console.log("Lower case was clicked");
         setText(text.toLowerCase())
     }
 
     const handleAllFirstCap = () => {
-        console.log("All first letter capitalise was clicked");
         let newText = text.split(" ").map((currentValue) => {
             return currentValue.charAt(0).toUpperCase() + currentValue.slice(1);
         }).join(" ");
@@ -33,7 +29,6 @@ export default function TextArea(props) {
     }
 
     const handleClear = () => {
-        console.log("Clear was clicked");
         setText('')
     }
 
@@ -51,7 +46,6 @@ export default function TextArea(props) {
     const mode = props.set;
 
     const myMode = {
-        // if mode is dark then color is white else color is black
         color: mode === 'dark' ? 'white' : 'black',
     }
 
@@ -88,8 +82,8 @@ export default function TextArea(props) {
 
             <div className="container my-3">
                 <h2 style={myMode}>Your text summary</h2>
-                <p style={{color : 'green'}} className='my-0'>{text.length > 0 ?(text[text.length -1] === " " ? text.split(" ").length - 1 :text.split(" ").length) : "0"} words and {text.length - count} characters</p>
-                <p style={{color : 'green'}}>{text.length > 0 ? 0.008 * (text[text.length -1] === " " ? text.split(" ").length - 1 :text.split(" ").length) : "0"} Minutes read time</p>
+                <p style={{color : 'green'}} className='my-0'>{text.split(/\s+/).filter((element) =>{return element.length !== 0}).length} words and {text.length - count} characters</p>
+                <p style={{color : 'green'}}>{0.008 * (text.split(/\s+/).filter((element) =>{return element.length !== 0}).length)} Minutes read time</p>
                 <h2 className='my-2' style={myMode}>Preview</h2>
                 <p  style={myMode}>{text.length > 0 ? text : "Enter something in the above box to preview."}</p>
             </div>

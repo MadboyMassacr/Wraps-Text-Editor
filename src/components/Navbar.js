@@ -8,12 +8,9 @@ export default function Navbar(prop) {
     let mode = prop.set;
 
     const SwitchButton = {
-      // if mode is dark then color is white else color is black
       color: mode === 'dark' ? 'white' : 'black',
     }
 
-
-    console.log(mode);
   return (
     <nav className={`navbar navbar-expand-lg bg-${(prop.set === 'light' ? 'light' : 'dark')} border-bottom border-body`} data-bs-theme={`${prop.set}`}>
         <div className="container-fluid">
@@ -33,7 +30,6 @@ export default function Navbar(prop) {
                 <Link className="nav-link" to="/about">{prop.aboutText}</Link>
               </li>
             </ul>
-            {/* <button className="btn btn-outline-success" style={myStyle} onClick={handleDarkClick}>{colState}</button> */}
 
             <div className={`form-check form-switch`} style={SwitchButton}>
               <input className="form-check-input" onClick={prop.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />

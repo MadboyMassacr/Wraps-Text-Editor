@@ -6,7 +6,6 @@ export default function About(props) {
     let mode = props.set;
 
     const myMode = {
-        // if mode is dark then color is white else color is black
         color: mode === 'dark' ? 'white' : 'black',
     }
     return (
@@ -17,7 +16,7 @@ export default function About(props) {
                 <h1 style={myMode}>About Developer</h1>
 
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-md-3 my-2">
                         <div class="card">
                             <img src="./maneesh.png" class="card-img-top" alt="..."/>
 
@@ -27,7 +26,7 @@ export default function About(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-md-3 my-2">
                         <div class="card">
                                 <img src="./maneesh2.png" class="card-img-top" alt="..."/>
 
