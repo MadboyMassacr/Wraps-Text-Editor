@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar title="Wrap" aboutText="About Warp" set={mode} toggleMode={toggleMode}/>
+        <Navbar title="Text Wrap" aboutText="About Warp" set={mode} toggleMode={toggleMode}/>
         <div className="container">
           <Switch>
               <Route exact path='/about'>
